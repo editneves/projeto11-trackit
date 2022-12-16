@@ -3,6 +3,7 @@ import NavBar from "../../components/NavBar"
 import Menu from "../../components/Menu"
 import CardHabits from "../../components/CardHabits"
 import HabitsRegistered from "../../components/HabitsRegistered"
+import AddHabits from "../../components/AddHabits"
 
 export default function HabitsPage() {
 
@@ -12,6 +13,9 @@ export default function HabitsPage() {
             <Habits>
 
                 <NavBar />
+                
+                <AddHabits/>
+
                 <Div>
                     <CardHabits />
                     <HabitsRegistered />

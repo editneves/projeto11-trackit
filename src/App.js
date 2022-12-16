@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 //import LoginPage from "./pages/LoginPage/LoginPage"
 //import RegistrationPage from "./pages/RegistrationPage/RegistrationPage"
- import HabitsPage from "./pages/HabitsPage/HabitsPage"
-// import TodayPage from "./pages/TodayPage/TodayPage"
-// import HistoricPage from "./pages/HistoricPage/HistoricPage"
+//import HabitsPage from "./pages/HabitsPage/HabitsPage"
+//import TodayPage from "./pages/TodayPage/TodayPage"
+import HistoricPage from "./pages/HistoricPage/HistoricPage"
 
 export default function App() {
   // const [inputValue, setInputValue] = useState("#000000");
@@ -16,15 +16,13 @@ export default function App() {
         <Routes>
           {/* <Route path="/" element={<LoginPage />} /> 
          {/* <Route path="/Registration" element={<RegistrationPage/>} />*/}
-
-         <Route path="/" element={<HabitsPage />}  />
-
-       {/* <Route path="/today" element={<TodayPage />} />
-        <Route path="/historic" element={<HistoricPage />} /> */}
+          {/*<Route path="/" element={<TodayPage />} />
+          {/* <Route path="/" element={<HabitsPage />} />*/}
+          <Route path="/" element={<HistoricPage />} /> 
         </Routes>
       </Container>
     </BrowserRouter>
-  );
+  )
 }
 
 const Container = styled.div`
