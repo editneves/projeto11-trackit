@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+//import LoginPage from "./pages/LoginPage/LoginPage"
+//import RegistrationPage from "./pages/RegistrationPage/RegistrationPage"
+ import HabitsPage from "./pages/HabitsPage/HabitsPage"
+// import TodayPage from "./pages/TodayPage/TodayPage"
+// import HistoricPage from "./pages/HistoricPage/HistoricPage"
 
-function App() {
+export default function App() {
+  // const [inputValue, setInputValue] = useState("#000000");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // setInputValue={setInputValue}
+    <BrowserRouter>
+      <Container>
+        <Routes>
+          {/* <Route path="/" element={<LoginPage />} /> 
+         {/* <Route path="/Registration" element={<RegistrationPage/>} />*/}
+
+         <Route path="/" element={<HabitsPage />}  />
+
+       {/* <Route path="/today" element={<TodayPage />} />
+        <Route path="/historic" element={<HistoricPage />} /> */}
+        </Routes>
+      </Container>
+    </BrowserRouter>
   );
 }
 
-export default App;
+const Container = styled.div`
+width: 375px;
+height: 667px;
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: center;
+align-items: center;
+align-content: space-between;
+`
