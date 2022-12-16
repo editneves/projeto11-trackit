@@ -36,4 +36,5 @@ flex-wrap: nowrap;
 justify-content: center;
 align-items: center;
 align-content: space-between;
+background: #E5E5E5;
 `

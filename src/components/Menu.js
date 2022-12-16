@@ -15,8 +15,8 @@ export default function Menu() {
 }
 
 const MenuDiv = styled.div`
-margin-left: 0px;
-margin-bottom: 0px;
+
+margin-top: 0px;
 width: 375px;
 height: 70px;
 background: #FFFFFF;
