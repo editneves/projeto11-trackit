@@ -5,19 +5,12 @@ import { AuthContext } from "../components/AuthContext"
 
 export default function NavBar() {
     const {user} = useContext(AuthContext);
-    // Transformar o objeto em string e salvar em localStorage
-  
-  localStorage.setItem('user', JSON.stringify(user));
-  const userString = localStorage.getItem('user');
-  const userObj = JSON.parse(userString);
-  console.log(userObj.email); 
-  console.log(userObj.password); 
 
     return (
         <>
-            <Topo>
+            <Topo data-test="header">
                 <TextTopo> TrackIt </TextTopo>
-                <UserImg src={user.image} alt="User" />
+                <UserImg src={user.image} />
             </Topo>
         </>
     )
