@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NavBarColor } from "../constants/colors"
+import { NavBarColor } from "../constante/colors"
 
 export default function AddHabits() {
     
@@ -7,7 +7,7 @@ export default function AddHabits() {
         <>
             <DivHabits>
                 <TextHabits> Meus hábitos </TextHabits>
-                <AddHabits> <p>+</p> </AddHabits>
+                <AddHabitss> <p>+</p> </AddHabitss>
             </DivHabits>
         </>
     )
@@ -23,12 +23,12 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 `
-const AddHabits = styled.div`
+const AddHabitss = styled.div`
 width: 40px;
 height: 35px;
 margin-right:18px;
 border-radius: 4.63636px;
-background: ${"#52B6FF"};
+background: "#52B6FF;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -41,7 +41,8 @@ p{
     font-size: 26.976px;
     line-height: 34px;
     text-align: center;
-    color: #FFFFFF;}
+    color: #FFFFFF;
+}
 `
 const TextHabits = styled.label`
 margin-left:17px;

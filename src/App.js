@@ -1,27 +1,33 @@
 import styled from "styled-components"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
-//import LoginPage from "./pages/LoginPage/LoginPage"
-//import RegistrationPage from "./pages/RegistrationPage/RegistrationPage"
-//import HabitsPage from "./pages/HabitsPage/HabitsPage"
-//import TodayPage from "./pages/TodayPage/TodayPage"
+import LoginPage from "./pages/LoginPage/LoginPage"
+import RegistrationPage from "./pages/RegistrationPage/RegistrationPage"
+import HabitsPage from "./pages/HabitsPage/HabitsPage"
+import TodayPage from "./pages/TodayPage/TodayPage"
 import HistoricPage from "./pages/HistoricPage/HistoricPage"
+import {AuthContext}  from "../src/components/AuthContext";
+
+import { useState } from "react";
 
 export default function App() {
-  // const [inputValue, setInputValue] = useState("#000000");
+
+  const [user, setUser] = useState({});
+  const [showhTreeDots, setShowhTreeDots] = useState(false);
+
   return (
-    // setInputValue={setInputValue}
-    <BrowserRouter>
-      <Container>
-        <Routes>
-          {/* <Route path="/" element={<LoginPage />} /> 
-         {/* <Route path="/Registration" element={<RegistrationPage/>} />*/}
-          {/*<Route path="/" element={<TodayPage />} />
-          {/* <Route path="/" element={<HabitsPage />} />*/}
-          <Route path="/" element={<HistoricPage />} /> 
-        </Routes>
-      </Container>
-    </BrowserRouter>
+    <AuthContext.Provider value={{ user, setUser,showhTreeDots, setShowhTreeDots }}>
+      <BrowserRouter>
+        <Container>
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/cadastro" element={<RegistrationPage />} />
+            <Route path="/hoje" element={<TodayPage />} />
+            <Route path="/habitos" element={<HabitsPage />} />
+            <Route path="/historico" element={<HistoricPage />} /> 
+          </Routes>
+        </Container>
+      </BrowserRouter>
+      </AuthContext.Provider>
   )
 }
 
@@ -34,5 +40,5 @@ flex-wrap: nowrap;
 justify-content: center;
 align-items: center;
 align-content: space-between;
-background: #E5E5E5;
+background: #FFFFFF;
 `

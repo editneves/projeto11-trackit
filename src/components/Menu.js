@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { buttonColor } from "../constants/colors"
+import { buttonColor } from "../constante/colors"
 
 export default function Menu() {
     

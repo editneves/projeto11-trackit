@@ -12,7 +12,6 @@ export default function HistoricPage() {
                 <NavBar />
                 <Div>
                     <Historic />
-                    
                 </Div>
                 <Menu />
             </Hist>

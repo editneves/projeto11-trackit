@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { NavBarColor } from "../constants/colors"
+import { NavBarColor } from "../constante/colors"
 
 export default function Historic() {
 

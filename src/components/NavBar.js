@@ -1,19 +1,29 @@
 import styled from "styled-components"
-import { NavBarColor } from "../constants/colors"
-import cat from "../images/411.jpg"
+import { NavBarColor } from "../constante/colors"
+import { useContext } from "react";
+import { AuthContext } from "../components/AuthContext"
 
 export default function NavBar() {
-    
+    const {user} = useContext(AuthContext);
+    // Transformar o objeto em string e salvar em localStorage
+  
+  localStorage.setItem('user', JSON.stringify(user));
+  const userString = localStorage.getItem('user');
+  const userObj = JSON.parse(userString);
+  console.log(userObj.email); 
+  console.log(userObj.password); 
+
     return (
         <>
             <Topo>
                 <TextTopo> TrackIt </TextTopo>
-                <UserImg src={cat} alt="User" />
+                <UserImg src={user.image} alt="User" />
             </Topo>
         </>
     )
 }
-//<Img src={"https://http.cat/411.jpg"} alt="logo" />
+
+
 const Topo = styled.div`
 width: 375px;
 height: 70px;
