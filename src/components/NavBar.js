@@ -10,7 +10,7 @@ export default function NavBar() {
         <>
             <Topo data-test="header">
                 <TextTopo> TrackIt </TextTopo>
-                <UserImg src={user.image} />
+                {/* <UserImg src={user.image} /> */}
             </Topo>
         </>
     )

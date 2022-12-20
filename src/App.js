@@ -6,16 +6,38 @@ import HabitsPage from "./pages/HabitsPage/HabitsPage"
 import TodayPage from "./pages/TodayPage/TodayPage"
 import HistoricPage from "./pages/HistoricPage/HistoricPage"
 import {AuthContext}  from "../src/components/AuthContext";
-
 import { useState } from "react";
 
 export default function App() {
-
   const [user, setUser] = useState({});
   const [showhTreeDots, setShowhTreeDots] = useState(false);
-
+  const [enviarHabit, setEnviarHabit] = useState({})
+  const [showAddHabitComponent, setShowAddHabitComponent] = useState(false)
+  const [showDayHabit, setShowDayHabit] = useState(false)
+  const [receberHabit, setReceberHabit] = useState(false)
+  const [showHabitRegistered, setShowHabitRegistered] = useState(false)
+  const localUser = JSON.parse(localStorage.getItem("user"));
+  const token = localUser.token;
+  
   return (
-    <AuthContext.Provider value={{ user, setUser,showhTreeDots, setShowhTreeDots }}>
+    <AuthContext.Provider value={{
+      user,
+      setUser,
+      showhTreeDots,
+      setShowhTreeDots,
+      enviarHabit, 
+      setEnviarHabit,
+      showAddHabitComponent,
+      setShowAddHabitComponent,
+      showDayHabit, 
+      setShowDayHabit,
+      receberHabit, 
+      setReceberHabit,
+      showHabitRegistered, 
+      setShowHabitRegistered,
+      localUser,
+      token,
+    }}>
       <BrowserRouter>
         <Container>
           <Routes>

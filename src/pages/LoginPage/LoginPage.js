@@ -23,6 +23,8 @@ export default function LoginPage() {
     const promise = axios.post(`${Base_URL}/auth/login`, dadosLogin);
     promise.then((res) => {
       setUser(res.data);
+      const userJSON = JSON.stringify(res.data)
+      localStorage.setItem("user", userJSON)
       navigate("/hoje");
     });
     promise.catch((err) => {
@@ -33,7 +35,7 @@ export default function LoginPage() {
 
   return (
     <>
-      <div> {user.name} </div>
+      {/* <div> {user.name} </div> */}
       <SignUp>
         <Img src={Group8} alt="logo" />
 
