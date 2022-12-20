@@ -73,10 +73,11 @@ export default function CardHabits() {
           {receberHabit.map((habit) => {
             return (
               <>
-                <CardHabitsDay>
+                <CardHabitsDay  data-test="habit-container">
                   <HabitsDay>
-                    <p>{habit.name}</p>
+                    <p data-test="habit-name" >{habit.name}</p>
                     <ImgLixeira
+                      data-test="habit-delete-btn"
                       id={habit.id}
                       src={lixeira}
                       alt="lixeira"
@@ -85,11 +86,8 @@ export default function CardHabits() {
                     />
                   </HabitsDay>
                   <Div>
-                  <Teste daysTeste={habit} />
+                  <Teste daysTeste={habit}  data-test="habit-day"/>
                   </Div>
-                  
-                 
-                  
                 </CardHabitsDay>
               </>
             );

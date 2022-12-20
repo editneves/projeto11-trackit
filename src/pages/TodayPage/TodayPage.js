@@ -24,32 +24,22 @@ export default function HabitsPage() {
       alert(err.response.data.message);
     });
   }, []);
-  const weekDayNames = [
-    { shortDay: "D", longDay: "Domingo" },
-    { shortDay: "S", longDay: "Segunda" },
-    { shortDay: "T", longDay: "Terça" },
-    { shortDay: "Q", longDay: "Quarta" },
-    { shortDay: "Q", longDay: "Quinta" },
-    { shortDay: "S", longDay: "Sexta" },
-    { shortDay: "S", longDay: "Sábado" },
-  ];
-  const weekDayName = weekDayNames[new Date().getDay()].longDay;
-  const dateNumber = new Date().getDate();
-  const monthNumber = new Date().getMonth() + 1;
 
-  console.log("esse", todayHabits);
+ 
+  const date = `${new Date().getDate()}/${new Date().getMonth()+1}`;
+
   return (
     <>
       <Today>
         <NavBar />
         <DivHabits>
           <p>
-            {weekDayName}, {dateNumber}/{monthNumber}{" "}
+             {date}
           </p>
 
           {todayHabits.map((element) => {
             if (element.done) {
-              return <h1>{element.highestSequence} concluídos</h1>;
+              return <h1 data-test="today-counter" >{element.highestSequence} concluídos</h1>;
             } else{
               return <></>;
             }
@@ -63,12 +53,12 @@ export default function HabitsPage() {
               <Div>
                 <CardHabitsDay key={index}>
                   <HabitsDay>
-                    <Hab>
-                      <p>{element.name}</p>
-                      <h1>Sequência atual: {element.currentSequence} dias</h1>
-                      <h1>Seu recorde: {element.highestSequence} dias </h1>
+                    <Hab data-test="today-habit-container">
+                      <p data-test="today-habit-name"  >{element.name}</p>
+                      <h1 data-test="today-habit-sequence">Sequência atual: {element.currentSequence} dias</h1>
+                      <h1 data-test="today-habit-sequence">Seu recorde: {element.highestSequence} dias </h1>
                     </Hab>
-                    <Check>
+                    <Check data-test="today-habit-check-btn">
                       <img src={check} alt="check" />
                     </Check>
                   </HabitsDay>
@@ -80,12 +70,12 @@ export default function HabitsPage() {
             <Div>
               <CardHabitsDay key={index}>
                 <HabitsDay>
-                  <Hab>
-                    <p>{element.name}</p>
-                    <h1>Sequência atual: <h2>{element.currentSequence} dias</h2> </h1> 
-                    <h1>Seu recorde: <h2>{element.highestSequence} dias </h2></h1> 
+                  <Hab >
+                    <p data-test="today-habit-name" >{element.name}</p>
+                    <h1 data-test="today-habit-sequence">Sequência atual: <h2>{element.currentSequence} dias</h2> </h1> 
+                    <h1 data-test="today-habit-sequence">Seu recorde: <h2>{element.highestSequence} dias </h2></h1> 
                   </Hab>
-                  <CheckDone>
+                  <CheckDone  data-test="today-habit-check-btn">
                     <img src={check} alt="check" />
                   </CheckDone>
                 </HabitsDay>
