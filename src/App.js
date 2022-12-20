@@ -40,6 +40,7 @@ export default function App() {
     }}>
       <BrowserRouter>
         <Container>
+          
           <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route path="/cadastro" element={<RegistrationPage />} />
@@ -47,6 +48,8 @@ export default function App() {
             <Route path="/habitos" element={<HabitsPage />} />
             <Route path="/historico" element={<HistoricPage />} /> 
           </Routes>
+          
+          
         </Container>
       </BrowserRouter>
       </AuthContext.Provider>
@@ -55,7 +58,7 @@ export default function App() {
 
 const Container = styled.div`
 width: 375px;
-height: 667px;
+height: 808px;
 display: flex;
 flex-direction: column;
 flex-wrap: nowrap;

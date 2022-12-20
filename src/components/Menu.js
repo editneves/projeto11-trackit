@@ -40,11 +40,11 @@ export default function Menu() {
   );
 }
 
-
-  /* <div style={{ width: 200, height: 200 }}>
-  <CircularProgressbar value={66} />
-</div> */
-
+// {
+//   /* <div style={{ width: 200, height: 200 }}>
+//   <CircularProgressbar value={66} />
+// </div> */
+// }
 const MenuDiv = styled.div`
   margin-top: 0px;
   width: 375px;

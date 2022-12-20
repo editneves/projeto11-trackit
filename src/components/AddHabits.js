@@ -4,10 +4,17 @@ import { useContext} from "react";
 import { AuthContext } from "../components/AuthContext";
 
 export default function AddHabits() {
+  
+  const { showHabitRegistered, setShowHabitRegistered } =
+  useContext(AuthContext);
   const { showAddHabitComponent, setShowAddHabitComponent } =
-    useContext(AuthContext);
-  const addCard = () => {
-    setShowAddHabitComponent(true);
+  useContext(AuthContext);
+
+  const addHabits = () => {
+    console.log("tgvbhynjkm")
+    setShowHabitRegistered(true)
+    setShowAddHabitComponent(true)
+   
   };
 
   return (
@@ -15,7 +22,7 @@ export default function AddHabits() {
       <DivHabits>
         <TextHabits> Meus hábitos </TextHabits>
 
-        <AddHabitss data-test="habit-create-btn" onClick={addCard}>
+        <AddHabitss data-test="habit-create-btn" onClick={addHabits}>
           <p>+</p>
         </AddHabitss>
       </DivHabits>
